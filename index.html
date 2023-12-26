@@ -1,16 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>game</title>
-    <link href="style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="frame">
-      <div class="canvas">
-        <div class="one"></div>
-        <div class="two"></div>
-      </div>
-    </div>
-  </body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Make it so that its compatible on all devices, can check when inspecting the page, then changing dimensions to different devices such as ipad -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ali Ahmed GameShopWebsite</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <!--making a header/navigation bar at the top-->
+        <section id="header">
+            <a href="#"><img src="images/logo.png" class="logo" alt=""></a>
+            <div>
+                <ul id="navbar">
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="playstation.html">PlayStation</a></li>
+                    <li><a href="xbox.html">Xbox</a></li>
+                    <li><a href="nintendo.html">Nintendo</a></li>
+                    <li><a href="latestnews.html">Latest News</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="rem-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <a href="#" id="shut"><i class="fa-solid fa-xmark"></i></a> <!-- a cross/X to close the navigation bar when clicked on mobile -->
+                </ul>
+            </div>
+
+            <div id="mobile"> <!-- For the side navbar that can be shown on mobile on the side after clicking on an icon -->
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a> <!-- Removed the li tag so that theres no bullet point as its not part of a list -->
+                <i id="bar" class="fa-solid fa-bars"></i> <!-- Hamburger icon should only be shown in mobile format so fix later -->
+            </div>
+        </section>
+
+        <section id="hero">
+            <!-- img tag was here -->
+            <img src="images/spiderman2.png" alt="">
+            <h2 class="opening">Great Value Deals and Discounts</h2>
+            <h1 class="opening">Largest Discount Marvel's Spiderman 2</h1>
+            <p class="opening">Up to 30% Off</p>
+            <a href="spiderman2.html"><button class="opening">Buy Now</button></a>
+        </section>
+
+        <Section id="banner3">
+            <div class="banner-box">
+                <a href="playstation.html"><img src="images/playstation.png" alt=""></a>
+            </div>
+
+            <div class="banner-box">
+                <a href="xbox.html"><img src="images/xbox4.png" alt=""></a>
+            </div>
+
+            <div class="banner-box"> 
+                <a href="nintendo.html"><img src="images/switch.png" alt=""></a>
+            </div>
+        </Section>
+
+        <section id="products1" class="section-p">
+            <h2>Featured Products</h2>
+            <p>Best-Sellers</p>
+            <div class="pro-container">
+                <div class="pro" onclick="window.location.href='re4remake.html';">
+                    <img src="images/re4remake.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Resident Evil 4 (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div> 
+
+                <!-- The 5 same div sections below have the same attributes as the one above but just have different pics/names -->
+
+                <div class="pro">
+                    <img src="images/ff16.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Final Fantasy 16 (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <div class="pro" onclick="window.location.href='gowragnarok.html';">
+                    <img src="images/godofwarragnarok.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>God of War: Ragnarok (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <div class="pro">
+                    <img src="images/lostjudgement.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Lost Judgement (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <div class="pro" onclick="window.location.href='feengage.html';">
+                    <img src="images/fireemblemengage.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Fire Emblem Engage (NSW)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+            </div>
+        </section>
+
+        <section id="the-true-container">
+            <!-- slider container -->
+        <div class="slider">
+
+          <!-- slide 1 -->
+          <div class="slide">
+            <a href="re4remake.html"><img src="images/re4remake.png" alt="" /></a>
+          </div>
+  
+          <!-- slide 2 -->
+          <div class="slide">
+            <a href="gowragnarok.html"><img src="images/godofwarragnarok.png" alt="" /></a>
+          </div>
+  
+          <!-- slide 3 -->
+          <div class="slide">
+            <a href="zelda.html"><img src="images/zelda2.png" alt="" /></a>
+          </div>
+  
+          <!-- slide 4 -->
+          <div class="slide">
+            <a href="feengage.html"><img src="images/fireemblemengage2.png" alt="" /></a>
+          </div>
+  
+          <!-- Control buttons -->
+          <button class="btn btn-next"><i class="fa-solid fa-arrow-right"></i></button>
+          <button class="btn btn-prev"><i class="fa-solid fa-arrow-left"></i></button>
+        </div>
+        </section>
+
+        <section id="banner" class="medium">
+            <h3>Back To School Sale!</h3>
+            <h2>Up to <span>60% Off</span> On Many PS5 and Switch Games</h2>
+            <button class="standard">Explore Deals</button>
+        </section>
+
+        <section id="fproducts" class="section-p"> <!-- Featured products but same as products1 section, just replace images and names etc -->
+            <h2>New Arrivals</h2>
+            <p>New Games For You To Experience</p>
+            <div class="pro-container">
+                <div class="pro">
+                    <img src="images/re4remake.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Resident Evil 4 (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <!-- The 5 same div sections below have the same attributes as the one above but just have different pics/names -->
+
+                <div class="pro">
+                    <img src="images/ff16.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Final Fantasy 16 (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <div class="pro">
+                    <img src="images/godofwarragnarok.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>God of War: Ragnarok (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <div class="pro">
+                    <img src="images/re4remake.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Resident Evil 4 (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <div class="pro">
+                    <img src="images/re4remake.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Resident Evil 4 (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <div class="pro">
+                    <img src="images/re4remake.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Resident Evil 4 (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+            </div>
+        </section>
+
+        <section id="s-banner" class="section-p">
+            <div class="banner-box">
+                <h4>Crazy deals</h4>
+                <h2>Buy 1 get 1 Free</h2>
+                <span>The best new game is on sale at TheGameShop</span>
+                <button class="white">Learn More</button>
+            </div>
+
+            <div class="banner-box banner-box2">
+                <h4>Pre-Orders</h4>
+                <h2>Get £5 in Reward Points</h2>
+                <span>For all pre-orders for further purchases at TheGameShop</span>  <!-- Change the text and image(changed in css) as its a copy of one above -->
+                <button class="white">Learn More</button>
+            </div>
+        </section>
+
+        <section id="features" class="section-p">
+            <div class="fe-box">
+                <img src="images/deliveryvan.png" alt="" width="200" height="200">
+                <h6>Free UK Shipping</h6>
+            </div>
+
+            <!-- Now just change the text in h6 and the src in each image tag for a different picture -->
+            
+            <!-- Also, try and make it work with having width and height in the css file -->
+
+            <div class="fe-box">
+                <img src="images/refund1.png" alt="" width="200" height="200">
+                <h6>Full Refunds Permitted</h6>
+            </div>
+
+            <div class="fe-box">
+                <img src="images/rewardpoints.png" alt="" width="200" height="200">
+                <h6>Earn Reward Points on Every Order</h6>
+            </div>
+
+        </section>
+
+        <section id="newsletter" class="section-p medium">
+            <div class="newstext">
+                <h4>Sign up for Newsletters</h4>
+                <p>Get e-mails notifying you of our latest <span>special offers.</span></p>
+            </div>
+
+            <div class="form">
+                <input type="text" placeholder="your e-mail address">
+                <button class="standard">Sign Up</button>
+            </div>
+        </section>
+
+        <footer class="section-p">
+            <div class="column">
+                <img class="logo" src="images/" alt=""> <!-- Add the logo here as an image -->
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> 42 Fake Street, London</p>
+                <p><strong>Contact Number:</strong> 07 000 000 000</p>
+                <p><strong>Hours:</strong> 09:00 - 18:00, Monday - Friday</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">FAQs</a>
+                <a href="#">Contact Us</a>
+            </div>
+
+            <div class="column">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="#">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+
+            <div class="column install">
+                <h4>Install App</h4>
+                <p>From Apple App Store or Google Play Store</p>
+                <div class="row">
+                    <img src="images/" alt=""> <!-- Add image for apple app store and google play store -->
+                    <img src="images/" alt=""> <!-- Add image for apple app store and google play store -->
+                </div>
+                <p>Secure Payment Gateways</p>
+                <img src="images/" alt=""> <!-- Add image for something like paypal, debit etc (The pic can be multiple ones in one pic) -->
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023, Ali Ahmed - The Game Shop - not real website</p> <!-- Maybe change this before uploading onto github -->
+            </div>
+        </footer>
+
+        <script src="script.js"></script> 
+
+        <script>
+            // Select all slides
+            const slides = document.querySelectorAll(".slide");
+
+            // loop through slides and set each slides translateX
+            slides.forEach((slide, indx) => {
+                slide.style.transform = `translateX(${indx * 100}%)`;
+            });
+
+            // select next slide button
+            const nextSlide = document.querySelector(".btn-next");
+
+            // current slide counter
+            let curSlide = 0;
+            // maximum number of slides
+            let maxSlide = slides.length - 1;
+            
+            // add event listener and navigation functionality
+            nextSlide.addEventListener("click", function () {
+                // check if current slide is the last and reset current slide
+                if (curSlide === maxSlide) {
+                    curSlide = 0;
+                } else {
+                    curSlide++;
+                }
+                
+                //   move slide by -100%
+                slides.forEach((slide, indx) => {
+                    slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+                });
+            });
+            // select next slide button
+            const prevSlide = document.querySelector(".btn-prev");
+            
+            // add event listener and navigation functionality
+            prevSlide.addEventListener("click", function () {
+                // check if current slide is the first and reset current slide to last
+                if (curSlide === 0) {
+                    curSlide = maxSlide;
+                } else {
+                    curSlide--;
+                }
+                
+                //   move slide by 100%
+                slides.forEach((slide, indx) => {
+                    slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+                });
+            });
+
+        </script>
+
+    </body>
 </html>

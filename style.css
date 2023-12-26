@@ -1,24 +1,1484 @@
-.canvas {
-  width: 500px;
-  height: 600px;
-  background-color: #4d0f00;
-  overflow: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
 }
 
-.frame {
-  border: 50px solid black;
-  width: 500px;
-  padding: 50px;
-  margin: 20px auto;
+body {
+    width: 100%;
 }
 
-.one {
-  width: 425px;
-  height: 150px;
-  background-color: #efb762;
-  margin: 20px auto;
+h1 {
+    font-size: 46px;
+    line-height: 54px;
+    color: blue;
 }
 
-.two {
-  width: 475px;
-  height: 200px;
+.medium {
+    margin: 40px 0; /* Used in banner section */
+}
+
+button.standard {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 14px 22px;
+    color: black;
+    background-color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.1s;
+}
+
+button.white {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px 20px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid white;
+    outline: none;
+    transition: 0.1s;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #0a2351; /* was #aec6cf - a type of grey */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); /* for box shadow its x, y, radius */
+    z-index: 999; /* so that when there is a background-image, the header will be in front of the background image */
+    position: sticky;
+    top: 0;
+    left: 0; /* these 3 have been used to ensure that even when you scroll down, the header will remain at the top at all times */
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff; /* was #1a1a1a - a slightly lighter black/dark grey */
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: antiquewhite;   
+}
+
+/* :: means pseudo class so even if not in html code, you can still have it take a class */
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: antiquewhite;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+/* all above is navigation bar */
+
+#mobile {         /* navigation bar for mobile */
+    display: none; /* doing display:flex will return the hamburger icon and potentially also the additional basket icon (which may potentially need to be fixed as second basket may need to be hidden?) */
+    align-items: center;
+}
+
+#shut {
+    display: none; /* the x to close the side navbar on mobile is still visible when not on mobile so this removes the x when not on mobile */
+}
+
+#hero {
+    /* background-image: url("images/spiderman2.png"); */
+    height: 90vh;
+    width: 50%;  /* this is for the picture of spiderman 2 on the home screen (or the picture of the girl in the tutorial) so change dimensions and values */
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px; /* this padding is to change the position of the text of the hero so instead of top left its slightly towards centre so change values */
+    display: flex; /* makes everything in a row */
+    flex-direction: column;
+    /* align-items: flex-start; */
+    text-align: center;
+    justify-content: center;
+    border-radius: 60px;
+}
+
+#hero .opening {
+    position: relative;
+    top: -280px;
+}
+
+#hero img {
+    height: 90vh;
+    position: relative;
+    top: 140px; /* was 80px */
+    right: -700px; /* was -600px */
+}
+
+#hero h2 {
+    padding-bottom: 15px;
+}
+
+#hero h1 {
+    color: bisque;
+}
+
+#hero button {   /* if you want a fancy button, you can import a pic and then apply the relevant features like background color being transparent - if size of backgorund image is wrong like it being too small, do padding for all 4 directions to make it fit the text of the button eg shop now*/
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 16px;
+}
+
+.section-p {
+    padding: 40px 80px; /* maybe add px if padding doesnt work */ 
+    /* also, add this class into section in html so that it pads away from the picture that would be inserted above*/
+}
+
+#features {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* changed from space-between to space-around */
+    flex-wrap: wrap; /* if not enough space then goes to next line */
+}
+
+#features .fe-box {
+    width: 280px; /* adding the box for the features */
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid black;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+#features .fe-box:hover {
+    box-shadow: 10px 10px 50px rgba(67, 58, 219, 0.12);
+}
+
+#features .fe-box img {
+    width: 100%;
+    margin-bottom: -30px; /* margin between the free uk shopping box and the image above it (minus means bringing it closer) */
+}
+
+#features .fe-box h6 {
+    padding: 8px 7px 6px 7px;
+    line-height: 1;
+    background-color: aquamarine;
+    border-radius: 6px;
+    color: black;
+    display: inline-block; /* so that shape is slightly larger than text in the shape/box */
+}
+
+#features .fe-box:nth-child(2) h6 {
+    background-color: blue;             
+    /* nth-child is essentially used for the same div but want to change certain aspects */
+}
+
+#features .fe-box:nth-child(3) h6 {
+    background-color: violet;             
+    /* may want to choose colours using #aaaaaa for less vibrant colours */
+}
+
+#features .fe-box:nth-child(4) h6 {
+    background-color: red;             
+}
+
+#products1 .pro-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap; 
+}
+
+#products1 {
+    text-align: center;
+}
+
+#products1 .pro {
+    width: 18%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid aquamarine;  
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.03);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative; /* this is linked to #products1 .pro .trolley as this is the parent of that child element so when linking the positions it results in the change of position to remain within the child element (stays in its box/shape) instead of bieng able to move/ end up moving to anywhere on the screen */
+}
+
+#products1 .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08);
+}
+
+#products1 .pro img {
+    width: 100%;
+    height: 230px; /* added so that all featured products images were the same height (ff16 was slighlty bigger than the rest) */
+    border-radius: 20px;
+}
+
+#products1 .pro .description {
+    text-align: start;
+    padding: 10px 0;
+
+}
+
+#products1 .pro .description span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#products1 .pro .description h5 {
+    padding-top: 7px;
+    color: black;
+    font-size: 16px;
+}
+
+#products1 .pro .description i {
+    font-size: 14px;
+    color: rgb(235, 235, 12);
+}
+
+#products1 .pro .description h4 {
+    padding-top: 6px;
+    font-size: 16px;
+    font-weight: 750;
+    color: red;
+}
+
+#products1 .pro .trolley {
+    width: 38px;
+    height: 38px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: aquamarine;
+    font-weight: 700; /* a font-weight thats too low could result in the icon not showing up */
+    color: black;
+    border: 1px solid rgb(72, 208, 163);
+    position: absolute; /* this line and the 2 below it change the position of the cart */
+    right: 10px;
+    bottom: 20px;
+}
+
+/* copy for fproducts starts here */
+
+#fproducts .pro-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap; 
+}
+
+#fproducts {
+    text-align: center;
+}
+
+#fproducts .pro {
+    width: 18%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid aquamarine;  
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.03);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative; /* this is linked to #products1 .pro .trolley as this is the parent of that child element so when linking the positions it results in the change of position to remain within the child element (stays in its box/shape) instead of bieng able to move/ end up moving to anywhere on the screen */
+}
+
+#fproducts .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08);
+}
+
+#fproducts .pro img {
+    width: 100%;
+    height: 230px; /* added same as issue for featured products where ff16 image was a bit bigger than the others */
+    border-radius: 20px;
+}
+
+#fproducts .pro .description {
+    text-align: start;
+    padding: 10px 0;
+
+}
+
+#fproducts .pro .description span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#fproducts .pro .description h5 {
+    padding-top: 7px;
+    color: black;
+    font-size: 16px;
+}
+
+#fproducts .pro .description i {
+    font-size: 14px;
+    color: rgb(235, 235, 12);
+}
+
+#fproducts .pro .description h4 {
+    padding-top: 6px;
+    font-size: 16px;
+    font-weight: 750;
+    color: red;
+}
+
+#fproducts .pro .trolley {
+    width: 38px;
+    height: 38px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: aquamarine;
+    font-weight: 700; /* a font-weight thats too low could result in the icon not showing up */
+    color: black;
+    border: 1px solid rgb(72, 208, 163);
+    position: absolute; /* this line and the 2 below it change the position of the cart */
+    right: 10px;
+    bottom: 20px;
+}
+
+/* this is where copy for fproducts ends */
+
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("images/banner.png");
+    width: 100%;
+    height: 30vh;
+    /* background-size: cover;
+    background-position: center; - if you dont want the background to repeat vertically for a larger height, to maintain the aspect ratio, add these 2 lines */
+}
+
+#banner h3 {
+    color: white;
+    font-size: 16px;
+}
+
+#banner h2 {
+    color: white;
+    font-size: 26px;
+    padding: 12px 0;
+}
+
+#banner h2 span {
+    color: red;
+}
+
+#banner button:hover {
+    background: #04AA6D;
+    color: white;
+}
+
+#s-banner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#s-banner .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("images/banner.png"); /* Change the picture to something else */
+    min-width: 580px;
+    height: 40vh;
+    padding: 30px;
+    background-size: cover;
+    background-position: center; 
+    /*- if you dont want the background to repeat vertically for a larger height, to maintain the aspect ratio, add these 2 lines (the 2 above) - this comment is taken from the #banner comment*/
+    /* the box is being repeated because you didnt add the 2 features right above this, because the picture is too small so would need smaller measurements otherwise */
+}
+
+#s-banner .banner-box2 {
+    background-image: url("images/banner.png"); /* Change the picture to something else */
+    /* if you have both banner box classes on at the same time, this second one will take precedence in terms of the background images */
+}
+
+#s-banner h4 {
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#s-banner h2 {
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+#s-banner span {
+    color: white;
+    font-size: 14px;
+    font-weight: 550;
+    padding-bottom: 14px;
+}
+
+#s-banner .banner-box:hover button {
+    background: #04AA6D;
+    border: 1px solid #04AA6D;
+}
+
+#banner3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 70px;
+    margin-top: 60px;
+}
+
+/* THE 3 BANNER BOXES BELOW COULD HAVE MANY THINGS REMOVED AS THERE IS NO TEXT IN THE 3 MAIN GAMING LOGOS */
+
+/* can make more efficient by having banner box 2 and 3 only having background image as all other features are the same?*/
+
+#banner3 .banner-box img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60vh; 
+    height: 60vh; 
+    padding: 22px;
+    margin-bottom: 18px;
+}
+
+#banner3 .banner-box:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#banner3 h2 {
+    color: white;
+    font-weight: 800;
+    font-size: 24px;
+}
+
+#banner3 h3 {
+    color: #ec544e;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    /*background-image: url("");*/
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: navy;
+}
+
+#newsletter h4 {
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+#newsletter p {
+    color: grey;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#newsletter p span{
+    color: red;
+}
+
+#newsletter .form {
+    display: flex;
+    width: 40%;
+
+}
+
+#newsletter input {
+    font-size: 14px;
+    height: 3.2rem;
+    width: 100%;
+    padding: 0 1.3em;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    outline: none;
+    border-top-right-radius: 0;  /* can make only some corners different values if you want or just no radius/0 radius */
+    border-bottom-right-radius: 0;
+}
+
+#newsletter button {
+    color: white;
+    background-color: #04AA6D;
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo {   /* To add some space below the logo */
+    margin-bottom: 30px;
+}
+
+footer h4 {
+    font-size: 15px;
+    padding-bottom: 22px;
+}
+
+footer p {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: black;
+    font-size: 12px;
+    text-decoration: none; /* So no underlines */
+    margin-bottom: 10px;
+}
+
+footer .follow {
+    margin-top: 20px;
+}
+
+footer .follow i {
+    color: black;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .install .row img { /* To add boxes/borders around the images of apple app store and google play store */
+    border: 1px solid #04AA6D;
+    border-radius: 4px;
+}
+
+footer .install img{ /* To make space between the apple and google play store images and the text above and below it and space for the payment gateways */
+    margin: 10px 0 14px 0;
+}
+
+footer .follow i:hover,
+footer a:hover {
+    color: aquamarine;
+}
+
+footer .copyright {
+    text-align: center;
+    width: 100%;
+}
+
+/*
+.slidershow 
+    margin: 0;
+    padding: 0;
+    background: #34495e;
+
+} */ /* is for the body so maybe remove? */
+
+.slidershow {
+    width: 800px; /* was 700px */
+    height: 800px; /* was 400px */
+    overflow: hidden; /* no scrolling mechanism */
+}
+
+.middle {
+    position: relative; /* was absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0); /* second value was changed to 0 */
+}
+
+.navigation {
+    position: absolute; 
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.bar {
+    width: 50px;
+    height: 10px;
+    border: 2px solid #fff;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bar:hover {
+    background: #fff;
+
+}
+
+input[name="r"]{
+    position: absolute; /* was absolute */
+    visibility: hidden; /* the 5 dots as part of the radio are hidden and instead we have 5 blocks that recreate the same job which are made above */
+}
+
+.slides {
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slide {
+    width: 20%;
+    transition: 0.3s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+#r1:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#r2:checked ~ .s1 {
+    margin-left: -20%;
+}
+
+#r3:checked ~ .s1 {
+    margin-left: -40%;
+}
+
+#r4:checked ~ .s1 {
+    margin-left: -60%;
+}
+
+#r5:checked ~ .s1 {
+    margin-left: -80%;
+}
+
+/* New slideshow below */
+
+
+/* PLAYSTATION PAGE STARTING BELOW */
+
+#page-header {
+    background-image: url(images/banner.png);
+    width: 100%;
+    height: 30vh;
+    background-size: cover; /* should probably remove this one */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    /* there is a missing image icon linked to the playstation text in the banner, check it and figure out how to get rid of the icon */
+    padding: 14px; /* may need to get rid of this as padding was added below for h2 and p in #page-header */
+}
+
+#page-header h2, 
+#page-header p {
+    color: white;
+    padding: 7px;
+}
+
+#page-information {
+    text-align: center;
+}
+
+#page-information a { /* may want to change a bit as button size is slightly bigger for the arrow so maybe change that?*/
+    text-decoration: none; /* no underline */
+    background-color: #04AA6D;
+    padding: 15px 20px;
+    border-radius: 3px;
+    color: #fff; /* white */  
+    font-weight: 600;
+
+}
+
+#page-information a i {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* PRODUCT DETAIL PAGE BELOW */
+
+#proddetails {
+    display: flex;
+    margin-top: 20px;
+}
+
+#proddetails .single-pro-image{
+    width: 40%;
+    margin-right: 50px;
+}
+
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col {
+    flex-basis: 24%; /* how much it will take up of the surrounding container's area */
+    cursor: pointer;
+}
+.small-img {
+    height: 150px;
+}
+
+#proddetails .single-pro-details {
+    width: 50%;
+    padding-top: 30px;
+}
+
+#proddetails .single-pro-details h4 {
+    padding: 40px 0 20px 0;
+}
+
+#proddetails .single-pro-details h2 {
+    font-size: 26px;
+}
+
+#proddetails .single-pro-details select {
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#proddetails .single-pro-details input {
+    width: 50px;
+    height: 46px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#proddetails .single-pro-details input:focus { /* focus is when you've already clicked on something */
+    outline: none;
+}
+
+#proddetails .single-pro-details button { 
+    background-color: #04AA6D;
+    color: #fff;
+}
+
+#proddetails .single-pro-details span {
+    line-height: 25px;
+}
+
+/* LATEST NEWS PAGE STARTS BELOW */
+
+#page-header.latestnews-header {
+    background-image: url("images/switch.png"); /* change later */
+}
+
+#latestnews {
+    padding: 140px 140px 0 140px;
+}
+
+#latestnews .latestnews-box{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+#latestnews .latestnews-img {
+    width: 50%;
+    margin-right: 40px;
+}
+
+#latestnews img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* The image keeps its aspect ratio and fills the given dimension. The image will be clipped to fit */
+}
+
+#latestnews .latestnews-details {
+    width: 50%;
+}
+
+#latestnews .latestnews-details a {
+    text-decoration: none; /* no underline */
+    font-size: 12px;
+    color: black; /* #000 */
+    font-weight: 600;
+    position: relative; /* in this parent element there needs to be a position: relative to enable the
+    child element (the one below this one - the ::after) to be able to use position: absolute */
+}
+
+#latestnews .latestnews-details a::after { /* making the black line next to continue reading... */
+    content: "";
+    width: 46px; /* width of line */
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    top: 4px;
+    right: -60px;
+}
+
+#latestnews .latestnews-details a:hover {
+    color: #04AA6D;
+    transition: 0.1s;
+}
+
+#latestnews .latestnews-details a:hover::after {
+    background-color: #04AA6D;
+}
+
+#latestnews .latestnews-box h1 {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    font-size: 60px;
+    font-weight: 700;
+    color: #c9cbce;
+    z-index: -999; /* to make the date below the image */
+}
+
+/* ABOUT PAGE STARTS BELOW */
+
+#page-header.about-header {
+    background-image: url("images/playstation.png");
+}
+
+#about-text {
+    display: flex;
+    align-items: center;
+}
+
+#about-text img{
+    width: 50%;
+    height: auto;
+}
+
+#about-text div {
+    padding-left: 30px;
+}
+
+/* about-video is about attaching a video so it will be made commented unless actual video is attached then use this, it will be below */
+
+#about-video { /* making the 'download our App' center */
+    text-align: center;
+}
+
+#about-video .video { /* did not target actual video  */
+    width: 60%;
+    height: 100%;
+    margin: 30px auto 0 auto; /* the 2 autos from left and right will cause the video to be in the center */
+}
+
+#about-video .video video { /* this will now allow the styling from (#about-video .video) above to actually work and take place */
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+/* CONTACT PAGE BELOW */
+
+#contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#contact-details .details {
+    width: 40%;
+}
+
+#contact-details .details span,
+#form-details form span {
+    font-size: 12px;
+}
+
+#contact-details .details h2,
+#form-details form h2 {
+    font-size: 24px;
+    line-height: 34px;
+    padding: 20px 0;
+}
+
+#contact-details .details h3 {
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+
+#contact-details .details li {
+    list-style: none; /* removing the bullet points */
+    display: flex;
+    padding: 10px 0;
+}
+
+#contact-details .details li i {
+    font-size: 14px;
+    padding-right: 22px;
+}
+
+#contact-details .details li p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#contact-details .map {
+    width: 55%;
+    height: 400px;
+}
+
+#contact-details .map iframe { /* now the google map location has perfect aspect ratio i believe */
+    width: 100%;
+    height: 100%;
+}
+
+#form-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 80px;
+    border: 1px solid #e1e1e1; /* maybe change the color */
+}
+
+#form-details form {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#form-details form input,
+#form-details form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1; /* change this */
+}
+
+#form-details form button {
+    background-color: #04AA6D; 
+    color: white;
+}
+
+#form-details .people div {
+    padding-bottom: 25px;
+    display: flex; /* this and the one below will make the text next to the image instead of below it */
+    align-items: flex-start;
+}
+
+#form-details .people div img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+#form-details .people div p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+#form-details .people div p span {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+
+/* CART PAGE BELOW */
+
+#cart {
+    overflow-x: auto; /* if screen not wide enough, a scroller wil be added e.g. for medium and small screen mobile devices */
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart table img {
+    width: 70px;
+}
+
+#cart table td:nth-child(1) {
+    width: 100px;
+    text-align: center;
+}
+
+#cart table td:nth-child(2) {
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(3) {
+    width: 250px;
+    text-align: center;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6) {
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(5) input {
+    width: 70px;
+    padding: 10px 5px 10px 15px;
+}
+
+#cart table thead {
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right: none;
+}
+
+#cart table thead td {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 18px 0;
+}
+
+#cart table tbody tr td {
+    padding-top: 15px;
+}
+
+#cart table tbody td {
+    font-size: 14px;
+}
+
+#cart-add {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#coupon {
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+#coupon h3,
+#subtotal h3 {
+    padding-bottom: 15px;
+}
+
+#coupon input {
+    padding: 10px 20px;
+    outline: none;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #e2e9e1;
+}
+
+#coupon button,
+#subtotal button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+}
+
+#subtotal {
+    width: 50%;
+    margin-bottom: 30px;
+    border: 1px solid #e2e9e1;
+    padding: 30px;
+}
+
+#subtotal table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#subtotal table td {
+    width: 50%;
+    border: 1px solid #e2e9e1;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* True Container Below from singlep2 html page (now index.html page) */
+
+#the-true-container {
+    height: 100vh; /* was 100vh */
+    display: grid;
+    place-items: center;
+    margin-top: 50px;
+}
+  
+.slider {
+    width: 100%;
+    max-width: 700px; /* was 800px */
+    height: 700px; /* was 350px */ /* 600px was good */
+    position: relative;
+    overflow: hidden;  /* makes the images that are next to each other stack on top of each other thus, becoming a carousel */
+}
+  
+.slide {
+    width: 100%;
+    max-width: 700px; /* was 800px */
+    height: 700px; /* was 350px */ /* 600px was good */
+    position: absolute;
+    transition: all 0.5s;
+}
+  
+.slide img {
+    width: 100%; /* was 100% */
+    height: 100%; /* was 100% */
+    object-fit: cover;
+}
+  
+.btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    z-index: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    font-size: 18px;
+}
+  
+.btn:active {
+    transform: scale(1.1);
+}
+  
+.btn-prev {
+    top: 45%;
+    left: 2%;
+}
+  
+.btn-next {
+    top: 45%;
+    right: 2%;
+}
+
+/* Starting Media Query */ 
+@media (max-width: 799px) {  /* This is the side nav bar that will be shown when clicking on icon that will bring this navbar out */ /* for medium screen devices like ipad */
+    
+    .section-p {
+        padding: 40px 40px; /* changed from 80 or something so that on mobile the features will be 2x3 and not 3x2 */
+    }
+
+    #navbar { 
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -300px; /* if negative high number like -300px the navbar will hide, should be 0 usually */
+        height: 100vh;
+        width: 300px;
+        background-color: beige;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.15);
+        padding: 80px 0 0 10px;
+        transition: 0.3s; /* when hamburger icon is clicked, the navbar will slide/transition into the screen instead of instantly appearing */
+    }
+
+    #navbar .active {
+        right: 0px; /* changed from -300px above to 0px so when hamburger icon is clicked, the navbar will come out and be visible */
+    }
+
+    #navbar li {
+        margin-bottom: 30px;
+    }
+
+    #mobile {         /* navigation bar for mobile */ /* also, this is copied from above */
+        display: flex; /* doing display:flex will return the hamburger icon and potentially also the additional basket icon (which may potentially need to be fixed as second basket may need to be hidden?) */
+        align-items: center;
+        /* its display:flex here and display:none elsewhere so when its mobile, the icons will show */
+    }
+
+    #mobile {
+        color: black;
+        font-size: 22px;
+        padding-left: 18px;
+    }
+
+    #shut { /* moving the cross of the mobile navigation bar higher/near the top */
+        color: black;
+        font-size: 22px;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        display: initial; /* up above, we said display:none for #shut so this makes sure the x only shows when the side navbar shows on mobile */
+    }
+
+    #rem-bag { /* short for remove bag */
+        display: none; /* so that when in mobile and side navbar is shown, the shopping bag icon will be removed (as there is a shopping bag icon before opening the side navbar on the normal navbar */
+    } 
+
+    /* the ones below this comment change the format/size of the main features of the home page on mobile */
+
+    #hero { /* changing the position and size of the large background image on mobile */
+        height: 80vh;
+        padding: 0 80px;
+        background-position: top 30% right 30%;
+    }
+
+    #features {
+        justify-content: center;
+    }
+
+    #features .fe-box {
+        margin: 15px 10px;
+    }
+
+    #products1 .pro-container {
+        justify-content: center;
+    }
+
+    #products1 .pro {
+        margin: 14px;
+    }
+
+    #banner {
+        height: 26vh;
+    }
+
+    #s-banner .banner-box {
+        min-width: 100%;
+        height: 26vh;
+    }
+
+    #banner3 {
+        padding: 0 40px;
+    }
+
+    #banner3 .banner-box {
+        width: 28%; /* slightly smaller than the original it should be */
+    }
+
+    #newsletter .form {
+        width: 70%; /* larger than the original */ 
+    }
+
+    /* Contact page below */
+
+    #form-details {
+        padding: 40px; /* changed from 80px */
+    }
+
+    #form-details form {
+        width: 50%; /* changed from 65% */
+    }
+}
+
+/* another media query - for small mobile devices like iphone */
+
+@media (max-width: 477px) {
+    
+    .section-p {
+        padding: 20px; /* made smaller from before */
+    }
+    
+    #header {
+        padding: 10px 30px; /* first value been made smaller to 10px, second value has been made smaller to 30px */
+    }
+
+    h1 {
+        font-size: 38px; /* made smaller to 38px */
+    }
+
+    h2 {
+        font-size: 32px; /* made smaller to 32px */
+    }
+
+    #hero {
+        padding: 0 20px; /* made smaller to 20px */
+        /* background-position: 55%; */ /* added, may not have been added before, double check it */
+    }
+
+    #features {
+        justify-content: space-between; /* used to be center */
+    }
+
+    #features .fe-box {
+        width: 155px; /* made smaller from before */
+        margin: 0 0 15px 0; /* the 2 0s at the front added, they werent ther before, 15 may also be a different value in the original, double check it */
+    }
+
+    #products1 .pro {
+        width: 100%; /* increased to 100% */
+    }
+
+    #banner {
+        height: 40vh; /* increased to 40vh */
+    }
+
+    #s-banner .banner-box {
+        height: 38vh; /* increased to 38vh */
+    }
+
+    #s-banner .banner-box2 {
+        margin-top: 18px; /* new feature added */
+    }
+
+    #banner3 {
+        padding: 0 18px; /* decreased to 18px */
+    }
+
+    #banner3 .banner-box {
+        width: 100%; /* increased to 100% */
+    }
+
+    #newsletter {
+        padding: 38px 18px; /* new feature added */
+    }
+
+    #newsletter .form {
+        width: 100%; /* increased to 100% */
+    }
+
+    footer .copyright {
+        text-align: start; /* was center */
+    }
+
+    /* Single Product */
+
+    #proddetails { /* To make text below the images (it looked weird having text next to the images) */
+        display: flex;
+        flex-direction: column; /* Removed margin-top: 20px */
+    }
+
+    #proddetails .single-pro-image { /* making the picture as wide as the mobile screen */
+        width: 100%; /* changed from 40% */
+        margin-right: 0px; /* changed from 50px */
+    }
+
+    #proddetails .single-pro-details { /* for product details and the rest to take 100% of the width, it looked weird taking only 50% */
+        width: 100%; /* changed from 50% */
+        /* removed padding-top: 30px; */
+    }
+
+    /* Latest News Page */
+
+    #latestnews {
+        padding: 100px 20px 0 20px; /* changed from 140px 140px 0 140px */
+    }
+
+    #latestnews .latestnews-box{
+        display: flex;
+        flex-direction: column; /* added here */
+        align-items: flex-start; /* changed from center */
+    }
+
+    #latestnews .latestnews-img {
+        width: 100%; /* changed from 50% */
+        margin-right: 0px; /* changed from 40px */
+        margin-bottom: 28px; /* added here so that there is some space between the image and the text below it */
+    }
+
+    #latestnews .latestnews-details {
+        width: 100%; /* changed from 50%. Looked weird having text only cover 50% so modified to 100% */
+    }
+
+    /* About Page */
+
+    #about-text {
+        flex-direction: column;
+    }
+
+    #about-text img{
+        width: 100%; /* changed from 50% */
+        margin-bottom: 20px; /* just to have some space below the image */
+    }
+
+    #about-text div {
+        padding-left: 0px; /* changed from 30px */
+    }
+
+    #about-video .video { 
+        width: 100%; /* changed from 60% */
+    }
+
+    /* Contact Page Below */
+
+    #contact-details {
+        flex-direction: column; /* added this */
+    }
+
+    #contact-details .details {
+        width: 100%; /* changed from 40% */
+        margin-bottom: 30px; 
+    }
+    
+    #contact-details .map {
+        width: 100%; /* changed from 55% */
+    }
+
+    #form-details {
+        margin: 10px; /* changed from 30px */
+        padding: 30px 10px; /* changed from 80px (1 number for all directions) - 1 more number added here */
+        flex-wrap: wrap;
+    }
+
+    #form-details form {
+        width: 100%; /* was 65%, then changed to 50% for medium screen mobile devices */
+        margin-bottom: 30px;
+    }
+
+    /* Cart Page Below */
+
+    #cart-add {
+        flex-direction: column;
+    }
+
+    #coupon {
+        width: 100%;
+    }
+
+    #subtotal {
+        width: 100%;
+        padding: 20px; /* changed from 30px */
+    }
+
+}
+
+/* media (mobile code in css) needs to be at the end so that it can override css made previously, if 
+it mobile code is before it then it will be overriden by the css in normal conditions and it will also be
+overriden when the web page is on a mobile device */
+

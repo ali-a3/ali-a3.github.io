@@ -1,0 +1,114 @@
+/* having the id before the class in css means that the class will inherit the features of the id */
+
+/* the full stop before the class should have no space after the id to inherit the features of the id and change the features of the class */
+
+/* for mobile devices, check if they work on both medium mobile screen devices (tablets) and small mobile screen devices (phones)  */
+
+/* check how to make it so that when you paste long stuff, it goes to the next line instead of out of the screen and adding a slider */
+
+/* display:flex align-items:center will make things in a row and justify-content:space-between adds a space between them*/
+
+/* for a nicer green for buttons could use #088178 */
+
+/* check if line height should be 25px instead of 24 px (if it should be a multiple of 5 or maybe even 25) */
+
+/* media (mobile code in css) needs to be at the end so that it can override css made previously, if 
+it mobile code is before it then it will be overriden by the css in normal conditions and it will also be
+overriden when the web page is on a mobile device */
+
+/* the table heading tag is <thead> */
+
+/* table row tag is <tr> */
+
+/* table data cell tag is <td> */
+
+/* display:flex makes things into a row */
+
+/*
+<section id="the-slider"> 
+            <div class="container"> <!--changing from thecontainer to container moved it to the right a bit-->
+                <h1 style="font-weight: 900; margin-top: 100px; margin-bottom: 50px;">some text under the image</h1>
+
+                <div id="theslider" class="carousel slide" data-ride="carousel"> <!-- data-ride carousel means it will start animating when the page loads -->
+                    <!--INDICATORS-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#theslider" data-slide-to="0" class="active"></li> <!--data target uses the given html element to trigger an action or event-->
+                        <li data-target="#theslider" data-slide-to="1"></li>
+                        <li data-target="#theslider" data-slide-to="2"></li>
+                        <li data-target="#theslider" data-slide-to="3"></li>
+                        
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div>
+                                        <h3>random text</h3>
+                                        <p>a lot of random text which will be deleted</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <img src="images/re4remake.png">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-sm-4"> 
+                                    <div>
+                                        <h3>random text</h3>
+                                        <p>a lot of random text which will be deleted</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <img src="images/godofwarragnarok.png">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div>
+                                        <h3>random text</h3>
+                                        <p>a lot of random text which will be deleted</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <img src="images/lostjudgement.png">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div>
+                                        <h3>random text</h3>
+                                        <p>a lot of random text which will be deleted</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <img src="images/fireemblemengage.png">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div> <!--CAROUSEL INNER ENDS HERE-->
+                    <!-- left and right controls-->
+                    <a class="left carousel-control" href="#theslider" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" ></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+
+                    <a class="right carousel-control" href="#theslider" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" ></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div> <!--CAROUSEL ENDS HERE-->
+            </div> <!--CONTAINER (?) ENDS HERE-->
+        </section> 
+        */ 

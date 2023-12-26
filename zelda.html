@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Make it so that its compatible on all devices, can check when inspecting the page, then changing dimensions to different devices such as ipad -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ali Ahmed GameShopWebsite</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <!--making a header/navigation bar at the top-->
+        <section id="header">
+            <a href="#"><img src="images/logo.png" class="logo" alt=""></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li> <!-- class="active" removed as playstation is now active-->
+                    <li><a href="playstation.html">PlayStation</a></li>
+                    <li><a href="xbox.html">Xbox</a></li>
+                    <li><a class="active" href="nintendo.html">Nintendo</a></li>
+                    <li><a href="latestnews.html">Latest News</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="rem-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <a href="#" id="shut"><i class="fa-solid fa-xmark"></i></a> <!-- a cross/X to close the navigation bar when clicked on mobile -->
+                </ul>
+            </div>
+
+            <div id="mobile"> <!-- For the side navbar that can be shown on mobile on the side after clicking on an icon -->
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a> <!-- Removed the li tag so that theres no bullet point as its not part of a list -->
+                <i id="bar" class="fa-solid fa-bars"></i> <!-- Hamburger icon should only be shown in mobile format so fix later -->
+            </div>
+        </section>
+
+        <section id="proddetails" class="section-p">
+            <div class="single-pro-image">
+                <img src="images/zelda.png" width="100%" id="MainImg" alt="">
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img src="images/zelda.png" width="100%" class="small-img" alt="">
+                    </div>
+
+                    <div class="small-img-col">
+                        <img src="images/zeldagameplay.png" width="100%" class="small-img" alt="">
+                    </div>
+
+                    <div class="small-img-col">
+                        <img src="images/zeldagameplay2.png" width="100%" class="small-img" alt="">
+                    </div>
+
+                    <div class="small-img-col">
+                        <img src="images/zeldagameplay3.png" width="100%" class="small-img" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-pro-details">
+                <h6>Home/ Nintendo Switch Game</h6>
+                <h4>The Legend of Zelda: Tears of the Kingdom</h4>
+                <h3>£39.99</h3>
+                <select>
+                    <option>Select Edition</option>
+                    <option>Standard Edition</option>
+                    <option>Steelbook Edition</option>
+                    <option>Collector's Edition</option>
+                </select>
+                <input type="number" value="1">
+                <button class="standard">Add to Cart</button> <!-- or basket? -->
+                <h4>Product Details</h4>
+                <span>Resident Evil 4 is a remake and reimagining of the genre-defining classic of the same name that 
+                    released in 2005. Play as Leon, a trained super agent, who has been tasked with ensuring the retrieval of the president's
+                    daughter from cultists in a remote spanish village.
+                </span>
+            </div>
+        </section>
+
+        <section id="products1" class="section-p">
+            <h2>Featured Products</h2>
+            <p>Best-Sellers</p>
+            <div class="pro-container">
+                <div class="pro">
+                    <img src="images/re4remake.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Resident Evil 4 (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <!-- The 5 same div sections below have the same attributes as the one above but just have different pics/names -->
+
+                <div class="pro">
+                    <img src="images/ff16.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Final Fantasy 16 (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <div class="pro">
+                    <img src="images/godofwarragnarok.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>God of War: Ragnarok (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <div class="pro">
+                    <img src="images/eldenring.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Elden Ring (PS5)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+                <div class="pro">
+                    <img src="images/fireemblemengage.png" alt="">
+                    <div class="description">
+                        <span>PS5</span>
+                        <h5>Fire Emblem Engage (NSW)</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>£39.99</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-shopping trolley"></i></a> <!-- Having spaces in the class means more than 1 class -->
+                </div>
+
+            </div>
+        </section>
+
+        <section id="newsletter" class="section-p medium">
+            <div class="newstext">
+                <h4>Sign up for Newsletters</h4>
+                <p>Get e-mails notifying you of our latest <span>special offers.</span></p>
+            </div>
+
+            <div class="form">
+                <input type="text" placeholder="your e-mail address">
+                <button class="standard">Sign Up</button>
+            </div>
+        </section>
+
+        <footer class="section-p">
+            <div class="column">
+                <img class="logo" src="images/" alt=""> <!-- Add the logo here as an image -->
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> 42 Fake Street, London</p>
+                <p><strong>Contact Number:</strong> 07 000 000 000</p>
+                <p><strong>Hours:</strong> 09:00 - 18:00, Monday - Friday</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">FAQs</a>
+                <a href="#">Contact Us</a>
+            </div>
+
+            <div class="column">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="#">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+
+            <div class="column install">
+                <h4>Install App</h4>
+                <p>From Apple App Store or Google Play Store</p>
+                <div class="row">
+                    <img src="images/" alt=""> <!-- Add image for apple app store and google play store -->
+                    <img src="images/" alt=""> <!-- Add image for apple app store and google play store -->
+                </div>
+                <p>Secure Payment Gateways</p>
+                <img src="images/" alt=""> <!-- Add image for something like paypal, debit etc (The pic can be multiple ones in one pic) -->
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023, Ali Ahmed - The Game Shop - not real website</p> <!-- Maybe change this before uploading onto github -->
+            </div>
+        </footer>
+
+        <script>
+            var MainImage = document.getElementById("MainImg"); /* the class name and variable name can be the same */        
+            var SmallImage = document.getElementsByClassName("small-img");
+
+            SmallImage[0].onclick = function() {
+                MainImg.src = SmallImage[0].src;
+            }
+
+            SmallImage[1].onclick = function() {
+                MainImg.src = SmallImage[1].src;
+            }
+
+            SmallImage[2].onclick = function() {
+                MainImg.src = SmallImage[2].src;
+            }
+
+            SmallImage[3].onclick = function() {
+                MainImg.src = SmallImage[3].src;
+            }
+        </script>
+
+        <script src="script.js"></script> 
+    </body>
+</html>
